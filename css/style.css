@@ -1,0 +1,60 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 20px 0;
+    background: #f7f7f7;
+    font-family: 'Helvetica',sans-serif;
+}
+h1{
+    font-size: 22px;
+    text-align: center;
+}
+.grid{
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 75px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card{
+    position: relative;
+    transition:  all 0.4s linear;
+    transform-style: preserve-3d;
+    margin: 5px;
+    border-radius: 4px;
+}
+.card,
+.back,
+.front{
+    height: 150px;
+    width: 150px;
+}
+.back,
+.front{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    backface-visibility: hidden;
+}
+.front{
+    background: #ffc400 no-repeat center center / contain;
+}
+
+.back{
+    transform: rotateY(180deg);
+    background-color: #fff;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.selected{
+    transform: rotateY(180deg);
+}
+.match .front{
+    background: #fff !important;
+}
